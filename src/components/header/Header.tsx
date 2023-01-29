@@ -1,12 +1,13 @@
 import React from "react";
 
-import { HeaderContainer, HeaderTitle, HeaderToggleWrapper, HeaderToggleRadio, HeaderToggleInput, HeaderToggleLabel, HeaderToggleSlider, HeaderToggle, HeaderToggleTheme, HeaderToggleThemeWrapper } from "./HeaderStyles";
+import { HeaderContainer, HeaderTitle, HeaderToggleWrapper, HeaderToggleRadio, HeaderToggleInput, HeaderToggleLabel, HeaderToggleSlider, HeaderToggle, HeaderToggleTheme, HeaderToggleThemeWrapper, HeaderThemeText } from "./HeaderStyles";
 
 const Header = ({ changeTheme, theme }: { changeTheme: (value: string) => void, theme: string }) => {
   return (
     <HeaderContainer>
-      <HeaderTitle>Calc</HeaderTitle>
+      <HeaderTitle>calc</HeaderTitle>
 
+      <HeaderThemeText>Theme</HeaderThemeText>
       <HeaderToggle>
         <HeaderToggleThemeWrapper>
         <HeaderToggleTheme>1</HeaderToggleTheme>

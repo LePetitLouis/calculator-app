@@ -40,6 +40,7 @@ export const KeyboardKey = styled.button<props>`
     grid-area: 1 / 3 / 2 / 4;
   }
   &:nth-child(4) {
+    font-size: 28px;
     grid-area: 1 / 4 / 2 / 5;
   }
   &:nth-child(5) {
@@ -79,6 +80,7 @@ export const KeyboardKey = styled.button<props>`
     grid-area: 4 / 4 / 5 / 5;
   }
   &:nth-child(17) {
+    font-size: 28px;
     grid-area: 5 / 1 / 6 / 3;
   }
   &:nth-child(18) {
@@ -91,5 +93,11 @@ export const KeyboardKey = styled.button<props>`
 
   &:active {
     opacity: 0.8;
+  }
+
+  @media (max-width: 524px) {
+    &:nth-child(4), &:nth-child(17) {
+      font-size: 20px;
+    }
   }
 `;

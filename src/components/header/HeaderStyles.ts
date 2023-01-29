@@ -99,3 +99,13 @@ export const HeaderToggleInput = styled.input`
     left: 55px;
   }
 `;
+
+export const HeaderThemeText = styled.p`
+  font-size: 12px;
+  flex: 1;
+  text-align: end;
+  text-transform: uppercase;
+  color: ${({ theme }) => theme.colorTextRevert};
+  margin-right: 3rem;
+  margin-bottom: -25px;
+`; 
