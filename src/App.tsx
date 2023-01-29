@@ -41,6 +41,8 @@ function App() {
   }
 
   const handleSetOperation = async (operation: string) => {
+    if (result === '0' && lastNumber === '') return;
+    
     if (operation === 'Backspace' && lastNumber !== '') {
       setLastNumber(lastNumber.slice(0, -1));
       lastNumber.length === 1 && setLastNumber('0');
@@ -101,6 +103,7 @@ function App() {
           setNumber={(number: string) => handleSetNumber(number)}
           result={() => handleResult()}
           reset={() => handleReset()}
+          operator={operation}
         />
       </ThemeProvider>
     </>

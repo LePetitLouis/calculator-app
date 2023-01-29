@@ -91,8 +91,9 @@ export const KeyboardKey = styled.button<props>`
     opacity: 0.8;
   }
 
-  &:active {
-    opacity: 0.8;
+  &.active {
+    background-color: ${({ theme, typeBtn }) => typeBtn === 'default' ? theme.colorTextSecondary : theme.colorText};
+    color: ${({ theme, typeBtn }) => typeBtn === 'default' ? theme.keyNumberBg : typeBtn === 'reset' ? theme.keyOperationBg : theme.keyResultBg};
   }
 
   @media (max-width: 524px) {
