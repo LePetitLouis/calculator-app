@@ -2,27 +2,27 @@ import React from 'react';
 
 import { KeyboardContainer, KeyboardKey } from './KeyboardStyles';
 
-const Keyboard = () => {
+const Keyboard = ({ setOperation, setNumber, reset, result }: { setOperation: (value: string) => void, setNumber: (number: string) => void, reset: () => void, result: () => void }) => {
   return (
     <KeyboardContainer>
-      <KeyboardKey typeBtn='default'>7</KeyboardKey>
-      <KeyboardKey typeBtn='default'>8</KeyboardKey>
-      <KeyboardKey typeBtn='default'>9</KeyboardKey>
-      <KeyboardKey typeBtn='reset'>DEL</KeyboardKey>
-      <KeyboardKey typeBtn='default'>4</KeyboardKey>
-      <KeyboardKey typeBtn='default'>5</KeyboardKey>
-      <KeyboardKey typeBtn='default'>6</KeyboardKey>
-      <KeyboardKey typeBtn='default'>+</KeyboardKey>
-      <KeyboardKey typeBtn='default'>1</KeyboardKey>
-      <KeyboardKey typeBtn='default'>2</KeyboardKey>
-      <KeyboardKey typeBtn='default'>3</KeyboardKey>
-      <KeyboardKey typeBtn='default'>-</KeyboardKey>
-      <KeyboardKey typeBtn='default'>.</KeyboardKey>
-      <KeyboardKey typeBtn='default'>0</KeyboardKey>
-      <KeyboardKey typeBtn='default'>/</KeyboardKey>
-      <KeyboardKey typeBtn='default'>x</KeyboardKey>
-      <KeyboardKey typeBtn='reset'>RESET</KeyboardKey>
-      <KeyboardKey typeBtn='result'>=</KeyboardKey>
+      <KeyboardKey typeBtn='default' onClick={() => setNumber('7')}>7</KeyboardKey>
+      <KeyboardKey typeBtn='default' onClick={() => setNumber('8')}>8</KeyboardKey>
+      <KeyboardKey typeBtn='default' onClick={() => setNumber('9')}>9</KeyboardKey>
+      <KeyboardKey typeBtn='reset' onClick={() => setOperation('DEL')}>DEL</KeyboardKey>
+      <KeyboardKey typeBtn='default' onClick={() => setNumber('4')}>4</KeyboardKey>
+      <KeyboardKey typeBtn='default' onClick={() => setNumber('5')}>5</KeyboardKey>
+      <KeyboardKey typeBtn='default' onClick={() => setNumber('6')}>6</KeyboardKey>
+      <KeyboardKey typeBtn='default' onClick={() => setOperation('+')}>+</KeyboardKey>
+      <KeyboardKey typeBtn='default' onClick={() => setNumber('1')}>1</KeyboardKey>
+      <KeyboardKey typeBtn='default' onClick={() => setNumber('2')}>2</KeyboardKey>
+      <KeyboardKey typeBtn='default' onClick={() => setNumber('3')}>3</KeyboardKey>
+      <KeyboardKey typeBtn='default' onClick={() => setOperation('-')}>-</KeyboardKey>
+      <KeyboardKey typeBtn='default' onClick={() => setNumber('.')}>.</KeyboardKey>
+      <KeyboardKey typeBtn='default' onClick={() => setNumber('0')}>0</KeyboardKey>
+      <KeyboardKey typeBtn='default' onClick={() => setOperation('/')}>/</KeyboardKey>
+      <KeyboardKey typeBtn='default' onClick={() => setOperation('*')}>x</KeyboardKey>
+      <KeyboardKey typeBtn='reset' onClick={reset}>RESET</KeyboardKey>
+      <KeyboardKey typeBtn='result' onClick={result}>=</KeyboardKey>
     </KeyboardContainer>
   )
 };
