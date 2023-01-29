@@ -28,7 +28,7 @@ body {
  
 }
 
-main{
+#root{
   position: relative;
   min-height: inherit;
   width: 100%;

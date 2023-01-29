@@ -21,6 +21,14 @@ function App() {
     setTheme(savedTheme);
   }, []);
 
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown)
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  })
+
   const handleSetNumber = (number: string) => {
     if (operation !== '') {
       setLastNumber(lastNumber + number);
@@ -67,7 +75,7 @@ function App() {
     setOperation('');
   }
 
-  const handleKeyDown = (value: any) => {
+  const handleKeyDown = (value: KeyboardEvent) => {
     if (value.key === '+' || value.key === '-' || value.key === '*' || value.key === '/' || value.key === 'Backspace') handleSetOperation(value.key);
     else if (value.key === 'Enter') handleResult();
     else if (value.key === 'Escape') handleReset();
@@ -82,7 +90,7 @@ function App() {
   }
 
   return (
-    <main onKeyDown={(event: any) => handleKeyDown(event)} tabIndex={-1}>
+    <>
       <ThemeProvider theme={theme === 'first' ? firstTheme : theme === 'second' ? secondTheme : thirdTheme}>
         <GlobalStyles />
         
@@ -95,7 +103,7 @@ function App() {
           reset={() => handleReset()}
         />
       </ThemeProvider>
-    </main>
+    </>
   );
 }
 
