@@ -43,5 +43,10 @@
   },
   "devDependencies": {
     "@types/styled-components": "^5.1.26"
-  }
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "styled-components"
+  ]
 }
