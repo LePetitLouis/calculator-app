@@ -5,14 +5,14 @@ import { HeaderContainer, HeaderTitle, HeaderToggleWrapper, HeaderToggleRadio, H
 const Header = ({ changeTheme, theme }: { changeTheme: (value: string) => void, theme: string }) => {
   return (
     <HeaderContainer>
-      <HeaderTitle>calc</HeaderTitle>
+      <HeaderTitle currentTheme={theme}>calc</HeaderTitle>
 
-      <HeaderThemeText>Theme</HeaderThemeText>
+      <HeaderThemeText currentTheme={theme}>Theme</HeaderThemeText>
       <HeaderToggle>
         <HeaderToggleThemeWrapper>
-        <HeaderToggleTheme>1</HeaderToggleTheme>
-        <HeaderToggleTheme>2</HeaderToggleTheme>
-        <HeaderToggleTheme>3</HeaderToggleTheme>
+        <HeaderToggleTheme currentTheme={theme} onClick={() => changeTheme('first')}>1</HeaderToggleTheme>
+        <HeaderToggleTheme currentTheme={theme} onClick={() => changeTheme('second')}>2</HeaderToggleTheme>
+        <HeaderToggleTheme currentTheme={theme} onClick={() => changeTheme('third')}>3</HeaderToggleTheme>
         </HeaderToggleThemeWrapper>
 
         <HeaderToggleWrapper>

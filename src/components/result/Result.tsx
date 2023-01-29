@@ -2,10 +2,10 @@ import React from 'react';
 
 import { ResultContainer, ResultScreen } from './ResultStyles';
 
-const Result = ({result }: { result: string }) => {
+const Result = ({result, theme }: { result: string, theme: string }) => {
   return (
     <ResultContainer>
-      <ResultScreen>
+      <ResultScreen currentTheme={theme}>
         {result}
       </ResultScreen>
     </ResultContainer>

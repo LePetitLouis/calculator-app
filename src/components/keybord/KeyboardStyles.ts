@@ -5,7 +5,7 @@ type props = {
 };
 
 export const KeyboardContainer = styled.section`
-  background-color: ${({ theme }) => theme.screenBg};
+  background-color: ${({ theme }) => theme.toggleBg};
   padding: 2rem;
   border-radius: 1rem;
   max-width: 600px;
@@ -19,12 +19,12 @@ export const KeyboardContainer = styled.section`
 
 export const KeyboardKey = styled.button<props>`
   font-family: 'League Spartan', sans-serif;
-  background-color: ${({ theme, typeBtn }) => typeBtn === 'default' ? theme.keyText : typeBtn === 'reset' ? theme.keyBg : theme.keyBgToggle};
+  background-color: ${({ theme, typeBtn }) => typeBtn === 'default' ? theme.keyNumberBg : typeBtn === 'reset' ? theme.keyOperationBg : theme.keyResultBg};
   border: none;
   border-radius: 1rem;
   height: 70px;
-  box-shadow: 0 6px 0 0 ${({ theme, typeBtn }) => typeBtn === 'default' ? theme.keyTextShadow : typeBtn === 'reset' ? theme.keyShadow : theme.keyShadowToggle};
-  color: ${({ theme, typeBtn }) => typeBtn === 'default' ? theme.colorText : theme.colorTextRevert};
+  box-shadow: 0 6px 0 0 ${({ theme, typeBtn }) => typeBtn === 'default' ? theme.keyNumberShadow : typeBtn === 'reset' ? theme.keyOperationShadow : theme.keyResultShadow};
+  color: ${({ theme, typeBtn }) => typeBtn === 'default' ? theme.colorTextSecondary : theme.colorText};
   font-size: 32px;
   font-weight: 700;
   cursor: pointer;
@@ -96,6 +96,7 @@ export const KeyboardKey = styled.button<props>`
   }
 
   @media (max-width: 524px) {
+    box-shadow: 0 3px 0 0 ${({ theme, typeBtn }) => typeBtn === 'default' ? theme.keyNumberShadow : typeBtn === 'reset' ? theme.keyOperationShadow : theme.keyResultShadow};
     &:nth-child(4), &:nth-child(17) {
       font-size: 20px;
     }

@@ -27,10 +27,12 @@ body {
   color: ${({ theme }) => theme.colorText};;
  
 }
-#root{
+
+main{
   position: relative;
   min-height: inherit;
   width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   gap: 2.4rem;

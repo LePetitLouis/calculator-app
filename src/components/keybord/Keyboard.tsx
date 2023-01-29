@@ -8,7 +8,7 @@ const Keyboard = ({ setOperation, setNumber, reset, result }: { setOperation: (v
       <KeyboardKey typeBtn='default' onClick={() => setNumber('7')}>7</KeyboardKey>
       <KeyboardKey typeBtn='default' onClick={() => setNumber('8')}>8</KeyboardKey>
       <KeyboardKey typeBtn='default' onClick={() => setNumber('9')}>9</KeyboardKey>
-      <KeyboardKey typeBtn='reset' onClick={() => setOperation('DEL')}>DEL</KeyboardKey>
+      <KeyboardKey typeBtn='reset' onClick={() => setOperation('Backspace')}>DEL</KeyboardKey>
       <KeyboardKey typeBtn='default' onClick={() => setNumber('4')}>4</KeyboardKey>
       <KeyboardKey typeBtn='default' onClick={() => setNumber('5')}>5</KeyboardKey>
       <KeyboardKey typeBtn='default' onClick={() => setNumber('6')}>6</KeyboardKey>

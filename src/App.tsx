@@ -33,10 +33,10 @@ function App() {
   }
 
   const handleSetOperation = async (operation: string) => {
-    if (operation === 'DEL' && lastNumber !== '') {
+    if (operation === 'Backspace' && lastNumber !== '') {
       setLastNumber(lastNumber.slice(0, -1));
       lastNumber.length === 1 && setLastNumber('0');
-    } else if (operation === 'DEL' && result !== '0') {
+    } else if (operation === 'Backspace' && result !== '0') {
       setResult(result.slice(0, -1));
       result.length === 1 && setResult('0');
     } else if (operation !== '' && lastNumber === '') setOperation(operation);
@@ -67,6 +67,13 @@ function App() {
     setOperation('');
   }
 
+  const handleKeyDown = (value: any) => {
+    if (value.key === '+' || value.key === '-' || value.key === '*' || value.key === '/' || value.key === 'Backspace') handleSetOperation(value.key);
+    else if (value.key === 'Enter') handleResult();
+    else if (value.key === 'Escape') handleReset();
+    else if (value.code.includes('Digit') || value.key === '.') handleSetNumber(value.key);
+  }
+
 
   const handleReset = () => {
     setResult('0');
@@ -75,12 +82,12 @@ function App() {
   }
 
   return (
-    <>
+    <main onKeyDown={(event: any) => handleKeyDown(event)} tabIndex={-1}>
       <ThemeProvider theme={theme === 'first' ? firstTheme : theme === 'second' ? secondTheme : thirdTheme}>
         <GlobalStyles />
         
         <Header changeTheme={setTheme} theme={theme} />
-        <Result result={ lastNumber ? lastNumber : result} />
+        <Result result={ lastNumber ? lastNumber : result} theme={theme} />
         <Keyboard 
           setOperation={(operation: string) => handleSetOperation(operation)}   
           setNumber={(number: string) => handleSetNumber(number)}
@@ -88,7 +95,7 @@ function App() {
           reset={() => handleReset()}
         />
       </ThemeProvider>
-    </>
+    </main>
   );
 }
 

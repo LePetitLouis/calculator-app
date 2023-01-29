@@ -4,66 +4,74 @@ declare module 'styled-components' {
   export interface DefaultTheme {
     mainBg: string;
     toggleBg: string;
-    screenBg: string;
+    resultBg: string;
 
-    keyBg: string;
-    keyShadow: string;
-    keyBgToggle: string;
-    keyShadowToggle: string;
-    keyText: string;
-    keyTextShadow: string;
+    keyNumberBg: string;
+    keyNumberShadow: string;
+
+    keyOperationBg: string;
+    keyOperationShadow: string;
+
+    keyResultBg: string;
+    keyResultShadow: string;
 
     colorText: string;
-    colorSecondary?: string;
-    colorTextRevert: string;
+    colorTextSecondary?: string;
+    colorTextRevert?: string;
   }
 }
 
 export const firstTheme: DefaultTheme = {
     mainBg: "#3a4764",
     toggleBg: "#232c43",
-    screenBg: "#182034",
+    resultBg: "#182034",
 
-    keyBg: "#637097",
-    keyShadow: "#404e72",
-    keyBgToggle: "#d03f2f",
-    keyShadowToggle: "#93261a",
-    keyText: "#eae3dc",
-    keyTextShadow: "#b4a597",
+    keyNumberBg: "#eae3dc",
+    keyNumberShadow: "#b4a597",
 
-    colorText: "#444b5a",
-    colorTextRevert: "#ffffff",
+    keyOperationBg: "#637097",
+    keyOperationShadow: "#404e72",
+
+    keyResultBg: "#d03f2f",
+    keyResultShadow: "#93261a",
+
+    colorText:"#ffffff",
+    colorTextSecondary: "#444b5a",
 };
 
 export const secondTheme: DefaultTheme = {
     mainBg: "#e6e6e6",
     toggleBg: "#d1cccc",
-    screenBg: "#ededed",
+    resultBg: "#ededed",
 
-    keyBg: "#377f86",
-    keyShadow: "#1b5f65",
-    keyBgToggle: "#ca5502",
-    keyShadowToggle: "#893901",
-    keyText: "#e5e4e1",
-    keyTextShadow: "#a69d91",
+    keyNumberBg: "#e5e4e1",
+    keyNumberShadow: "#a69d91",
 
-    colorText: "#35352c",
-    colorTextRevert: "#ffffff",
+    keyOperationBg: "#377f86",
+    keyOperationShadow: "#1b5f65",
+  
+    keyResultBg: "#ca5502",
+    keyResultShadow: "#893901",
+
+    colorText: "#ffffff",
+    colorTextSecondary: "#35352c",
 };
 
 export const thirdTheme: DefaultTheme = {
     mainBg: "#160628",
     toggleBg: "#1d0934",
-    screenBg: "#ededed",
+    resultBg: "hsl(268, 71%, 12%)",
 
-    keyBg: "#58077d",
-    keyShadow: "#bc15f4",
-    keyBgToggle: "#00e0d1",
-    keyShadowToggle: "#6cf9f2",
-    keyText: "#341c4f",
-    keyTextShadow: "#871c9c",
+    keyNumberBg: "#341c4f",
+    keyNumberShadow: "#871c9c",
 
-    colorText: "#ffe53d",
-    colorSecondary: "#1b2428",
-    colorTextRevert: "#ffffff",
+    keyOperationBg: "#58077d",
+    keyOperationShadow: "#bc15f4",
+
+    keyResultBg: "#00e0d1",
+    keyResultShadow: "#6cf9f2",
+
+    colorText: "#ffffff",
+    colorTextSecondary: "#ffe53d",
+    colorTextRevert: "#1b2428",
 };

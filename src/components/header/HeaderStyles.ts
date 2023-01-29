@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+type props = {
+  currentTheme: string;
+}
+
 export const HeaderContainer = styled.section`
   display: flex;
   justify-content: space-between;
@@ -8,9 +12,9 @@ export const HeaderContainer = styled.section`
   width: 100%;
 `;
 
-export const HeaderTitle = styled.h1`
+export const HeaderTitle = styled.h1<props>`
   font-size: 32px;
-  color: ${({ theme }) => theme.colorTextRevert};
+  color: ${({ theme, currentTheme }) => currentTheme === 'first' ? theme.colorText : theme.colorTextSecondary};
 `;
 
 export const HeaderToggle = styled.div`
@@ -25,9 +29,10 @@ export const HeaderToggleThemeWrapper = styled.div`
   align-items: center;
 `;
 
-export const HeaderToggleTheme = styled.p`
+export const HeaderToggleTheme = styled.p<props>`
   font-size: 16px;
-  color: ${({ theme }) => theme.colorTextRevert};
+  color: ${({ theme, currentTheme }) => currentTheme === 'first' ? theme.colorText : theme.colorTextSecondary};
+  cursor: pointer;
 `;
 
 export const HeaderToggleWrapper = styled.div`
@@ -53,7 +58,7 @@ export const HeaderToggleRadio = styled.div`
 `;
 
 export const HeaderToggleSlider = styled.div`
-  background-color: ${({ theme }) => theme.keyBgToggle};
+  background-color: ${({ theme }) => theme.keyResultBg};
   width: 20px;
   height: 20px;
   position: absolute;
@@ -100,12 +105,12 @@ export const HeaderToggleInput = styled.input`
   }
 `;
 
-export const HeaderThemeText = styled.p`
+export const HeaderThemeText = styled.p<props>`
   font-size: 12px;
   flex: 1;
   text-align: end;
   text-transform: uppercase;
-  color: ${({ theme }) => theme.colorTextRevert};
+  color: ${({ theme, currentTheme }) => currentTheme === 'first' ? theme.colorText : theme.colorTextSecondary};
   margin-right: 3rem;
   margin-bottom: -25px;
 `; 
