@@ -9,7 +9,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 git clone https://github.com/LePetitLouis/calculator-app.git
 
 # enter the project directory
-cd terramite
+cd calculator-app
 
 # install dependency
 npm ci
